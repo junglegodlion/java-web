@@ -1,0 +1,241 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+@font-face {font-family: 'iconfont';
+    src: url('../img/font/iconfont.eot'); 
+    src: url('../img/font/iconfont.eot') format('embedded-opentype'),
+    url('../img/font/iconfont.woff') format('woff'),
+    url('../img/font/iconfont.ttf') format('truetype'),
+    url('../img/font/iconfont.svg#iconfont') format('svg');
+}
+
+a{
+	text-decoration: none;
+}
+
+a:link,a:visited{
+	color:#5e5e5e;
+}
+
+body{
+	font-family:"微软雅黑";
+	color: #14191e;
+}
+
+.main{
+	width:1200px;
+	height:460px;
+	margin:30px auto;
+	position:relative;
+	/*超出范围的内容隐藏掉*/
+	overflow:hidden;
+}
+
+.banner{
+	width:1200px;
+	height:460px;
+	overflow:hidden;
+	position:relative;
+}
+
+.banner-slide{
+	width:1200px;
+	height:460px;
+	/*background-repeat 属性设置是否及如何重复背景图像。*/
+	background-repeat:no-repeat;
+	float:left;
+	/*设置隐藏*/
+	display:none;
+}
+
+.slide-active{
+	display:block;
+}
+
+.slide1{
+	/*这边要写全background-image，只写backgroud的话，上面background-repeat:no-repeat;不起作用*/
+	background-image:url(../img/bg1.jpg);
+}
+
+.slide2{
+	background-image:url(../img/bg2.jpg);
+}
+
+.slide3{
+	background-image:url(../img/bg3.jpg);
+}
+
+.button{
+    position: absolute;
+	/*Transform属性应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等。*/
+	/*旋转180度*/
+    transform:rotate(180deg);
+    top: 50%;
+    left: 244px;
+    height: 80px;
+    width: 40px;
+    margin-top:-40px;
+    background:url(../img/arrow.png) center center no-repeat;
+}
+
+.next{
+	transform:rotate(0deg);
+	/*使left不起作用*/
+	left:auto;
+	right:0;
+}
+
+.button:hover{
+	/*当父级标签设置了background，子标签应该具体*/
+	background-color:#333;
+	opacity: 0.8;
+	/*兼容其他浏览器*/
+	/*filter 属性定义了元素(通常是<img>)的可视效果(例如：模糊与饱和度)。*/
+	filter:alpha(opacity=80);
+}
+
+.dots {
+	position: absolute;
+	bottom: 24px;
+	right: 0;
+	text-align: right;
+	padding-right: 24px;
+	/*设置行高*/
+	line-height: 12px;
+}
+
+.dots span {
+	/*水平方向排列*/
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	margin-left: 8px;
+	/*为什么使用rgba*/
+	/*0.4设置透明度*/
+	background-color: rgba(7, 17, 27, 0.4);
+	/*cursor属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状*/
+	cursor: pointer;
+	/*box-shadow属性可以设置一个或多个下拉阴影的框。*/
+	/*添加白色的描边*/
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset;
+}
+
+.dots span.active{
+	box-shadow: 0 0 0 2px rgba(7, 17, 27, 0.4) inset;
+	background-color: #ffffff;
+}
+
+/* menu-box */
+.menu-box {
+	background:rgba(7, 17, 27, 0.5);
+	opacity: 0.5;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 244px;
+	height: 460px;
+	/*设置优先级，防止内容被盖住*/
+	z-index: 1;
+}
+
+.menu-content{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 244px;
+	height: 460px;
+	z-index: 2;
+	padding-top: 6px;
+}
+
+.menu-item{
+	height: 64px;
+	line-height: 66px;
+	font-size: 12px;
+	cursor: pointer;
+	padding: 0 24px;
+	position: relative;
+}
+
+.menu-item a{
+	display: block;
+	color: #fff;
+	padding: 0 8px;
+	/*border-bottom缩写属性设置一个声明中所有底部边框属性。*/
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	height: 63px;
+	font-size:16px;
+}
+
+.menu-item:last-child a{
+	border-bottom:none;
+}
+
+.menu-item i{
+	position: absolute;
+	right: 32px;
+	top: 24px;
+	color: rgba(255,255,255,0.5);
+	font-size: 24px;
+    top: 2px;
+    font-style:normal;
+    font-weight:normal;
+    font-family:"iconfont";
+}
+
+.sub-menu {
+	border:1px solid #d9dde1;
+	background:#fff;
+	position: absolute;
+	left: 244px;
+	top: 0px;
+	width: 730px;
+	height: 458px;
+	z-index: 581;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.hide{
+	display:none;
+}
+
+.inner-box{
+	width:100%;
+	height:100%;
+	background:url(../img/fe.png) no-repeat;
+	display:none;
+}
+
+.sub-inner-box{
+	width: 652px;
+	margin-left: 40px;
+	overflow: hidden;
+}
+
+.title{
+	color: #f01414;
+	font-size: 16px;
+	line-height: 16px;
+	margin-top: 28px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+.sub-row{
+	margin-bottom:25px;
+}
+
+.bold{
+	font-weight:700;
+}
+
+.mr10{
+	margin-right:10px;
+}
+
+.ml10{
+	margin-left:10px;
+}
